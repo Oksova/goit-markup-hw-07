@@ -1,0 +1,9 @@
+@mixin colored($color) {
+  color: #212121;
+}
+
+@mixin centeredFlex($type: flex) {
+  display: $type;
+  align-items: center;
+  justify-content: center;
+}
