@@ -17,9 +17,10 @@
 }
 
 .background {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include centeredFlex();
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 
   width: 270px;
   height: 120px;
