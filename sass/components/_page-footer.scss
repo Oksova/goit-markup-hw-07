@@ -2,6 +2,13 @@
   background-color: #2f303a;
   font-family: Roboto, sans-serif;
 }
+.page-footer .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
 .location {
   display: flex;
   justify-content: space-between;
@@ -20,16 +27,23 @@
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-.page-footer .logo {
+.address .link {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
 }
-.page-footer .direction {
+.address .direction {
   color: $whitecolor;
 }
-
 .sign {
   display: block;
   margin: 0;
@@ -60,26 +74,11 @@
   background: rgba(255, 255, 255, 0.1);
   --color2: #ffffff;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.footer-links .link:hover,
-.footer-links .link:focus {
-  background-color: $accentcolor;
-}
-
-.address .link {
-  display: block;
-  color: rgba(255, 255, 255, 0.6);
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.address .link:not(:last-child) {
-  margin-bottom: 9px;
+  &:hover,
+  &:focus {
+    background-color: $accentcolor;
+  }
 }
 
 .mailing-container {
@@ -111,14 +110,16 @@
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+
+  & .icon-send {
+    margin-left: 10px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover .icon-send {
+    transform: translateY(-38px);
+  }
 }
-.sign-button .icon-send {
-  margin-left: 10px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.sign-button:hover .icon-send {
-  transform: translateY(-38px);
-}
+
 .sign-button .icon-mail {
   position: absolute;
   content: '';
@@ -129,17 +130,16 @@
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --color1: #757575;
 }
-
 .sign-button:hover .icon-mail {
   transform: translateY(-50%);
   --color1: #212121;
 }
-
 .sign-button:hover,
 .sign-button:focus {
   color: $textcolor;
-  --color3: var(--primary-text-color);
+  --color3: #212121;
 }
+
 .email {
   width: 358px;
   height: 50px;
@@ -151,36 +151,20 @@
   border-radius: 4px;
   background-color: #2f303a;
   color: $whitecolor;
-}
 
-.email::placeholder {
-  padding: 18px 12px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.03em;
+  &::placeholder {
+    padding: 18px 12px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.03em;
 
-  color: rgba(255, 255, 255, 0.6);
-}
-.copyright {
-  border-top: 1px solid #ececec;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 18px;
-  padding-bottom: 21px;
-
-  font-size: 12px;
-  line-height: 2;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .link:hover {
   color: $accentcolor;
-}
-.footer-studio {
-  color: $whitecolor;
 }
